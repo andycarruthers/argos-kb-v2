@@ -9,9 +9,12 @@ navigation by category, full-text search (client-side, no external account neede
 light/dark mode, "edit this page" links back to GitHub, and previous/next article
 navigation, all out of the box.
 
-**This is a prototype, not the production KB.** It covers the 7 highest-deflection-opportunity
-topics identified from the July 2026 support workshop ticket analysis, as a proof of the new
-format and the review workflow below — not a full replacement of all ~810 existing articles.
+**This is a prototype, not the production KB.** It covers 10 topics so far — the 7
+highest-deflection-opportunity topics identified from the July 2026 support workshop ticket
+analysis, plus 3 more sourced from Argos's live "Argos KB — Article Pipeline" editorial review
+in Notion (with real SME corrections from Greg Beale and Melissa McLeod folded in) — as a proof
+of the new format and the review workflow below, not a full replacement of all ~810 existing
+articles. More pipeline articles are being added as that review is worked through.
 
 ## Running it locally
 
@@ -41,6 +44,11 @@ access granted to it during the connect flow, same as any private-repo site.
   reproduced as real HTML/CSS (see `src/css/custom.css`, `.vault-mockup` styles) rather than
   pasted as images, since that's not something that could be scripted or exported directly,
   and it's actually how the source KB itself stores them.
+- Argos's live "Argos KB — Article Pipeline" database in Notion — a 20-article editorial
+  review already under way internally, with Subject Matter Expert comments from Greg Beale and
+  Melissa McLeod. Articles 8-10 below are sourced from that pipeline directly, with each
+  reviewer correction carried into the article content and flagged in `needs_sme_confirmation`
+  rather than silently applied.
 
 ## Review workflow
 
@@ -71,6 +79,9 @@ live — not "review this," but the exact claims that need confirming and why.
 | 5 | [Diagnosing a GL / Cashbook balance variance](docs/05-balance-variance-diagnosis.md) | General Ledger / Cashbook | 🟢 Ready to publish | ~4/month (highest cost-per-ticket) |
 | 6 | [Working out an early termination / payout figure](docs/06-early-termination-process.md) | Variable Loan / Bailment | 🟡 SME review required | ~3/month, high priority |
 | 7 | [Running month-end](docs/07-month-end-process.md) | Control / Cashbook / GL | 🟢 Ready to publish | ~2/month direct, high downstream impact |
+| 8 | [Cannot connect to Argos Vault via AVD](docs/cannot-connect-avd.md) | AVD / Access | 🟡 SME review required | 3-4/month |
+| 9 | [Bank statement import errors and export file setup](docs/bank-statement-import-export.md) | Cashbook | 🟡 SME review required | ~2/month |
+| 10 | [Argos Batch Processing — server paths, version checks, troubleshooting](docs/batch-processing-server-troubleshooting.md) | System Config | 🟡 SME review required | ~2/month |
 
 ## What's deliberately not in this prototype
 

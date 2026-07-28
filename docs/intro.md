@@ -9,7 +9,7 @@ slug: /
 This is a **prototype** rebuild of the Argos knowledge base — organised around what you're trying to *do*, not around a screen-by-screen list of what each button does.
 
 :::info Prototype
-This covers 7 topics so far, chosen because they're the most common reasons people contact Argos support. The rest of the existing knowledge base is still available through your usual support channel while this is being built out.
+This covers 10 topics so far — the original 7 most common support reasons, plus 3 more pulled from Argos's live article review pipeline (with real SME corrections folded in). More are being added as that review process completes. The rest of the existing knowledge base is still available through your usual support channel while this is being built out.
 :::
 
 ## Where to start

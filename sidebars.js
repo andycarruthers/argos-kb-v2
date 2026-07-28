@@ -6,13 +6,19 @@ const sidebars = {
       type: 'category',
       label: 'Access & Security',
       collapsed: false,
-      items: ['new-user-access-setup'],
+      items: ['new-user-access-setup', 'cannot-connect-avd'],
     },
     {
       type: 'category',
       label: 'Reporting & General Ledger',
       collapsed: false,
       items: ['gl-reporting-export', 'balance-variance-diagnosis'],
+    },
+    {
+      type: 'category',
+      label: 'Cashbook & Banking',
+      collapsed: false,
+      items: ['bank-statement-import-export'],
     },
     {
       type: 'category',
@@ -26,9 +32,9 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Month-End',
+      label: 'Month-End & System Config',
       collapsed: false,
-      items: ['month-end-process'],
+      items: ['month-end-process', 'batch-processing-server-troubleshooting'],
     },
   ],
 };

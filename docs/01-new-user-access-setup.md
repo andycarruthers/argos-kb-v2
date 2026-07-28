@@ -13,6 +13,7 @@ supersedes:
   - External User Details
 related_articles:
   - 04-direct-debit-curtailment-setup.md
+  - cannot-connect-avd
 needs_sme_confirmation:
   - "IP whitelisting mechanism described below (Azure NSG rule tied to the hosting VM) is inferred from architecture notes and client conversations, not from an existing KB article — no such article currently exists. Please confirm the actual current process (who requests it, who action­s it, expected turnaround) before publishing."
   - "Whether a self-service IP whitelisting option is on any near-term roadmap — if yes, this article should say so and set expectations; if no, it should say clearly why (see 'Why this isn't self-service yet' box)."
@@ -69,11 +70,11 @@ This is the part that generates the most tickets, and the part with no dedicated
 1. Their **Staff Code** exists and is Active (Part 1, above).
 2. Their **network location is allowed to reach the VM** — this is enforced at the network level (an Azure security rule tied to your organisation's VM), completely separate from anything inside Vault itself.
 
-**If a new starter, or someone working from a new location (home, a different office, travelling), can't connect at all** — not a Vault error, just nothing happening, or a connection timeout — this is almost always the second one, not the first.
+**If a new starter, or someone working from a new location (home, a different office, travelling), can't connect at all** — not a Vault error, just nothing happening, or a connection timeout — this is almost always the second one, not the first. If they're getting further than that (a device shows up but login fails, or the app misbehaves), see [Cannot Connect to Argos Vault via AVD](cannot-connect-avd) — worth knowing upfront that AVD sign-in uses a separate Entra ID identity, distinct from the Vault login itself, which is a common point of confusion.
 
 ### Why this isn't self-service yet
 
-Right now, getting a new IP address allowed through requires **raising a support ticket** — there's no self-service option in the client portal for this today. A typical request looks like:
+Right now, getting a new IP address allowed through requires **contacting Argos Support** directly — there's no self-service option in the client portal for this today, and it isn't something your own internal IT team can action, since Argos administers this environment. A typical request looks like:
 
 > "Can you please whitelist the following IP for \[name], who is working from home."
 
