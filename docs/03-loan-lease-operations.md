@@ -1,5 +1,6 @@
 ---
 title: "Common loan and lease operations: refinancing, extending, and advancing funds"
+description: "The shared mechanism behind refinancing, extending, and advancing funds on a Variable Loan account."
 module: Variable Loan / Lease
 status: draft
 ticket_deflection_estimate: "~8/month"
@@ -15,6 +16,10 @@ needs_sme_confirmation:
 ---
 
 # Common loan and lease operations: refinancing, extending, and advancing funds
+
+:::caution Under review
+This article is a first draft and hasn't yet been checked against real support tickets or confirmed by the Argos team.
+:::
 
 This covers the operational tasks that come up repeatedly on active Variable Loan accounts — capitalising arrears into a new loan, advancing additional funds, and changing terms — using the same underlying mechanism each time, which is worth understanding once rather than memorising as separate procedures.
 

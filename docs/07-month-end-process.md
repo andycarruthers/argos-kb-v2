@@ -1,5 +1,6 @@
 ---
 title: "Running month-end: a checklist that actually matches how the system works"
+description: "A daily-habit-first month-end checklist, plus the final reconciliation step against the GL Trial Balance."
 module: Control / Cashbook / General Ledger
 status: ready_to_publish
 ticket_deflection_estimate: "~2/month directly, but month-end problems are a common root cause behind other categories (GL variance, reporting errors) surfacing the following month"

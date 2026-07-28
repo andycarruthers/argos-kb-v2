@@ -1,5 +1,6 @@
 ---
 title: "Setting up a new Argos user (and getting them connecting from day one)"
+description: "How to create a new Staff Code, control what they can see, and get their location whitelisted so they can actually connect."
 module: Control / Security
 status: sme_review_required
 ticket_deflection_estimate: "~16/month — the single largest deflection opportunity in the KB"
@@ -22,6 +23,10 @@ source_tickets_reviewed:
 ---
 
 # Setting up a new Argos user (and getting them connecting from day one)
+
+:::caution Under review
+Parts of this article (marked below) are still being confirmed with the Argos team before we're fully confident in them.
+:::
 
 New Access / Login tickets are the single biggest category of Argos support requests — around 14% of everything we see. Almost none of them are bugs. They're two separate, ordinary tasks that this article walks through together, because in practice a new starter usually needs both done before their first day: **setting them up inside Vault**, and **getting their machine able to reach it**.
 

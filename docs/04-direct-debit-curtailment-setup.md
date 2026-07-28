@@ -1,5 +1,6 @@
 ---
 title: "Setting up direct debits and curtailment schedules"
+description: "Setting up Direct Debit Details correctly, and running the Curtailment Wizard in bulk for Bailment accounts."
 module: Direct Debit / Bailment
 status: sme_review_required
 ticket_deflection_estimate: "~5/month"
@@ -22,6 +23,10 @@ source_tickets_reviewed:
 ---
 
 # Setting up direct debits and curtailment schedules
+
+:::caution Under review
+Parts of this article (marked below) are still being confirmed with the Argos team before we're fully confident in them.
+:::
 
 Direct debit tickets cluster around two different questions: "how do I set one up" (straightforward), and "why is this direct debit doing something I didn't expect" (where the real support time goes). This article covers setup, then the specific behaviours worth understanding before they surprise you.
 
@@ -50,7 +55,11 @@ Direct Debit Details are held **at the account level**, so a different bank acco
 
 ### If a direct debit report shows dates that don't look right
 
-Before assuming the report is wrong, check which of the two date pairs above actually drove the entry — a "pre-dated" or unexpected-looking entry is usually explained by Next Date being set independently of Standard Date, not by a calculation error. [needs confirming — see frontmatter]
+Before assuming the report is wrong, check which of the two date pairs above actually drove the entry — a "pre-dated" or unexpected-looking entry is usually explained by Next Date being set independently of Standard Date, not by a calculation error.
+
+:::note
+This specific explanation is still being confirmed — see the review note in this article's source.
+:::
 
 ## Setting up curtailments in bulk (Bailment)
 
@@ -60,10 +69,10 @@ The Curtailment Wizard puts a batch of accounts "Under Arrangement" and creates 
 
 <div class="vault-mockup">
   <div class="title-bar">Create Curtailments Process</div>
-  <div style="margin: 6px 0 10px; color:#1c3f7c; font-weight:600;">Curtailment Candidates</div>
+  <div class="section-label-inline">Curtailment Candidates</div>
   <div class="row"><span class="label">Processing Date:</span><span class="field">11/04/2019 ▾</span></div>
   <div class="row"><span class="label">Distributor:</span><span class="field lookup"></span></div>
-  <table class="grid" style="margin-top:12px;">
+  <table class="grid grid-spaced">
     <tr><th></th><th>Account</th><th>Original Asset Amount</th><th>DIF Date</th><th>Curtailment Date</th><th>Day</th></tr>
     <tr><td>☑</td><td></td><td></td><td>13/02/2019</td><td>14/02/2019</td><td></td></tr>
     <tr><td>☑</td><td></td><td></td><td>15/02/2019</td><td>16/02/2019</td><td></td></tr>

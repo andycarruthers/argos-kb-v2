@@ -1,5 +1,6 @@
 ---
 title: "Getting your GL data out of Argos and matching it to your books"
+description: "Exporting the GL Trial Balance and reconciling it against Xero, distributor statements, or your own ledger."
 module: General Ledger / Reporting
 status: sme_review_required
 ticket_deflection_estimate: "~8/month"
@@ -23,6 +24,10 @@ source_tickets_reviewed:
 ---
 
 # Getting your GL data out of Argos and matching it to your books
+
+:::caution Under review
+Parts of this article (marked below) are still being confirmed with the Argos team before we're fully confident in them.
+:::
 
 Reporting and GL export tickets are usually not "how do I print a report" — they're "I need to prove these two numbers match, and I don't know which report shows me that." This article covers both: how to actually run and export the GL Trial Balance, and how to think about matching it to an external system (Xero, your own ledger, a distributor's numbers) when the two don't line up on the first try.
 

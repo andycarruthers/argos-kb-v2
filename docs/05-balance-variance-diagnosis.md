@@ -1,5 +1,6 @@
 ---
 title: "Diagnosing a GL / Cashbook balance variance"
+description: "A step-by-step order of checks to isolate why your GL and Cashbook balances don't agree."
 module: General Ledger / Cashbook
 status: ready_to_publish
 ticket_deflection_estimate: "~4/month, but these are consistently the most expensive tickets to resolve (highest average turns and resolution time of any category)"

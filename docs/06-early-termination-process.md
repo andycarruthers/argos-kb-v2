@@ -1,5 +1,6 @@
 ---
 title: "Working out an early termination or payout figure"
+description: "Terminating a Variable Loan account early, and working out a Bailment dealer's full payout figure."
 module: Variable Loan / Bailment
 status: sme_review_required
 ticket_deflection_estimate: "~3/month, but disproportionately high-priority — payout figures are usually needed against a real external deadline (settlement, dealership closure, refinance)"
@@ -23,6 +24,10 @@ source_tickets_reviewed:
 
 # Working out an early termination or payout figure
 
+:::caution Under review
+Parts of this article (marked below) are still being confirmed with the Argos team before we're fully confident in them.
+:::
+
 "What does it cost to end this today" comes up across every account type, but the account type changes exactly which process applies. This article covers the two most common real scenarios: terminating a Variable Loan account, and working out a Bailment dealer's payout figure (e.g. when a dealership is closing and needs a final settlement number).
 
 ## Variable Loan early termination
@@ -31,13 +36,13 @@ source_tickets_reviewed:
 
 <div class="vault-mockup">
   <div class="title-bar">Early Termination</div>
-  <div class="row"><span class="label">Termination Reason</span><span class="field required"></span><span class="label" style="width:auto;margin-left:16px;">Date</span><span class="field readonly">9/02/2025</span></div>
-  <div class="row"><span class="label">Early Terminate Date</span><span class="field required">9/02/2025</span><span class="label" style="width:auto;margin-left:16px;">Future Balance</span><span class="field readonly">2938410.02</span></div>
-  <div class="row"><span class="label">Write Off Principal</span><span class="field">0.00</span><span class="label" style="width:auto;margin-left:16px;">Accrued Interest</span><span class="field readonly">102884.60</span></div>
-  <div class="row"><span class="label">Write Off Interest</span><span class="field">0.00</span><span class="label" style="width:auto;margin-left:16px;">Accrued Facility Fee</span><span class="field readonly">0.00</span></div>
-  <div class="row"><span class="label">Facility Fee Write Off</span><span class="field">0.00</span><span class="label" style="width:auto;margin-left:16px;">Current Balance</span><span class="field readonly">0.00</span></div>
-  <div class="row"><span class="label">Default Interest Write Off</span><span class="field">0.00</span><span class="label" style="width:auto;margin-left:16px;">Default Interest Accrued</span><span class="field readonly">0.00</span></div>
-  <div class="row"><span class="label">Insurance Premium Rebate</span><span class="field">0.00</span><span class="label" style="width:auto;margin-left:16px;">Total Due</span><span class="field readonly">3041294.62</span></div>
+  <div class="row"><span class="label">Termination Reason</span><span class="field required"></span><span class="label label-inline">Date</span><span class="field readonly">9/02/2025</span></div>
+  <div class="row"><span class="label">Early Terminate Date</span><span class="field required">9/02/2025</span><span class="label label-inline">Future Balance</span><span class="field readonly">2938410.02</span></div>
+  <div class="row"><span class="label">Write Off Principal</span><span class="field">0.00</span><span class="label label-inline">Accrued Interest</span><span class="field readonly">102884.60</span></div>
+  <div class="row"><span class="label">Write Off Interest</span><span class="field">0.00</span><span class="label label-inline">Accrued Facility Fee</span><span class="field readonly">0.00</span></div>
+  <div class="row"><span class="label">Facility Fee Write Off</span><span class="field">0.00</span><span class="label label-inline">Current Balance</span><span class="field readonly">0.00</span></div>
+  <div class="row"><span class="label">Default Interest Write Off</span><span class="field">0.00</span><span class="label label-inline">Default Interest Accrued</span><span class="field readonly">0.00</span></div>
+  <div class="row"><span class="label">Insurance Premium Rebate</span><span class="field">0.00</span><span class="label label-inline">Total Due</span><span class="field readonly">3041294.62</span></div>
   <div class="row"><span class="label">Fees</span><span class="field">0.00</span><span class="btn">Fees [B]</span></div>
 </div>
 
