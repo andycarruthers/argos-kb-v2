@@ -15,9 +15,12 @@ supersedes:
   - P&I NPV (FI) Early Termination
 related_articles:
   - 05-balance-variance-diagnosis.md
+  - transaction-reversal
+  - floorplan-rounding-issues
 needs_sme_confirmation:
   - "The Bailment/dealer payout section is written up from a single real support ticket (see below) where the steps were given ad hoc by a support agent over email, not from an existing published KB article — no dedicated 'dealer payout figure' article currently exists. Please confirm these are the officially correct/complete steps (not just what worked for that one case) before publishing."
-  - "Confirm current Fixed Loan and Lease early termination processes still match the older KB articles being superseded here — those weren't re-verified in this pass, only Variable Loan and the Bailment dealer payout case were."
+  - "The Fixed Loan and Lease sections below are sourced from a separate draft in Argos's Notion review pipeline (status: Draft, not yet SME-approved). Greg Beale reviewed that source and said: 'Why are VL terminations not included? It assumes a quote has been issued. This may not be the case. Otherwise, not a bad article.' Treat the Fixed Loan/Lease steps and terminology below as unverified until an SME confirms them — and note the source draft itself doesn't cover the case where no formal quote was issued first, which is also not covered here."
+  - "A screen recording was flagged as recommended for the Fixed Loan/Lease termination steps in the source draft, but none exists yet."
 source_tickets_reviewed:
   - "15462 — 'Dealer Payout Figure', Oct 2025, Priority 1 - Critical — dealership closure, payout figure needed same-day"
 ---
@@ -53,6 +56,29 @@ Parts of this article (marked below) are still being confirmed with the Argos te
 - **Early Terminate Date** defaults to today but can be moved forward up to the next interest posting date — useful if you're preparing a quote for a date that hasn't arrived yet.
 - **Total Due** is the actual figure to quote the client — it's Future Balance plus all accrued amounts, net of any write-offs entered above it.
 
+## Fixed Loan and Lease early termination
+
+:::caution Under review
+This section is sourced from a draft still marked "Draft" in Argos's internal review pipeline — treat it as unverified until an SME confirms it, and note it doesn't cover terminating an account where no formal quote was issued first.
+:::
+
+A few terms come up across every account type:
+
+- **Termination Amount** — future balance, plus arrears, plus accrued default interest, plus GST.
+- **Payout Amount** — Lease accounts only: Termination Amount plus Residual Value.
+- **Quote vs. actual difference** — a quote is a point-in-time estimate. Interest keeps accruing after it's issued, so always recalculate on the actual termination date rather than reusing an old quote figure — differences usually come from a different termination date, additional transactions posted since the quote, changed arrears, or changed rebate amounts.
+- **Write-Off** — requires a Write Off Transaction Type to be configured on the account type before it can be used.
+
+**Fixed Loan:** open the account → Early Termination dialog → complete Termination Details — **Termination Reason** [F2], **Termination Date**, **Rebate**, **Insurance Premium Rebate**, **Insurance Commission Rebate**, **Early Termination Fee** (these should match the original quote if one was issued), plus the **Include GST** / **Include Recurring Charges** checkboxes — then review the calculated Termination Amount. If a write-off is needed, complete **Write Off** / **Default Interest Write Off** (a fully written-off account should show 0.00 after), then confirm the termination.
+
+**Lease:** the calculation method depends on how the lease recognises income — P&I Standard, P&I NPV, Rental Standard, or Rental NPV. Open the Early Termination dialog → **Termination Reason** (mandatory) → **Termination Date** → **Discount Rate** (NPV methods only) → **Add Taxes on** (usually left at the default) → optional **Communication Type** → **Write Off** / **Default Interest Write Off** as needed → review the calculated Termination Amount and Payout Amount — calculate a quote first if you just need a figure, and only confirm the termination once you're actually proceeding.
+
+:::note Not yet verified
+The exact dialog and button names for confirming a Fixed Loan or Lease termination haven't been confirmed. A reviewer flagged button-label accuracy as a recurring problem across drafts in this source pipeline, so specific button names are deliberately not stated here until checked — see [Generating a termination quote](settlement-statement-generation).
+:::
+
+**If you need to reverse an early termination that was processed in error**, any write-off must be reversed first, then the termination itself — see [Transaction Reversal in Argos](transaction-reversal).
+
 ## Bailment: working out a dealer's payout figure
 
 This comes up most often when a dealership is closing or being sold and needs a final settlement figure for their whole floor plan facility — often urgent, since it usually has a real external deadline attached.
@@ -73,3 +99,5 @@ If the request is specifically about **fees accrued** at the same time (rather t
 | Current ledger doesn't show a clean credit balance after termination | Funds not yet cleared, or a write-off is genuinely needed |
 | Payout figure disputed after being sent | Fees accrued vs. fees charged separately weren't clarified upfront |
 | Need a payout figure across multiple accounts for one dealer | Use the Bailment Account Status Report with Show Accrued Interest, not individual account lookups |
+| Fixed Loan/Lease payout figure doesn't match an earlier quote | Expected if time has passed — interest keeps accruing after a quote is issued, so recalculate on the actual termination date rather than reusing the quote |
+| Bailment floorplan account shows a small unexplained variance vs. the original order | See [Early termination rounding issues on floorplan assets](floorplan-rounding-issues) |

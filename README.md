@@ -9,12 +9,13 @@ navigation by category, full-text search (client-side, no external account neede
 light/dark mode, "edit this page" links back to GitHub, and previous/next article
 navigation, all out of the box.
 
-**This is a prototype, not the production KB.** It covers 10 topics so far — the 7
+**This is a prototype, not the production KB.** It covers 24 topics — the 7
 highest-deflection-opportunity topics identified from the July 2026 support workshop ticket
-analysis, plus 3 more sourced from Argos's live "Argos KB — Article Pipeline" editorial review
-in Notion (with real SME corrections from Greg Beale and Melissa McLeod folded in) — as a proof
-of the new format and the review workflow below, not a full replacement of all ~810 existing
-articles. More pipeline articles are being added as that review is worked through.
+analysis, plus the complete 20-article set from Argos's live "Argos KB — Article Pipeline"
+editorial review in Notion (with real SME corrections from Greg Beale folded in — three
+pipeline articles were merged into existing ones rather than published separately, and one was
+split into two where a reviewer felt the original scope was wrong) — as a proof of the new
+format and the review workflow below, not a full replacement of all ~810 existing articles.
 
 ## Running it locally
 
@@ -45,10 +46,13 @@ access granted to it during the connect flow, same as any private-repo site.
   pasted as images, since that's not something that could be scripted or exported directly,
   and it's actually how the source KB itself stores them.
 - Argos's live "Argos KB — Article Pipeline" database in Notion — a 20-article editorial
-  review already under way internally, with Subject Matter Expert comments from Greg Beale and
-  Melissa McLeod. Articles 8-10 below are sourced from that pipeline directly, with each
-  reviewer correction carried into the article content and flagged in `needs_sme_confirmation`
-  rather than silently applied.
+  review under way internally, with every one of its Subject Matter Expert comments (all from
+  Greg Beale in this batch) read and carried into the article content below, not silently
+  applied. Where a comment directly corrected a fact (a wrong button/field name, a wrong
+  process step), the correction was made directly. Where a comment raised something genuinely
+  unresolved (a disputed premise, a missing scoping conversation, an unconfirmed UI label),
+  that's flagged in the article's `needs_sme_confirmation` list and in an in-page callout,
+  not guessed at.
 
 ## Review workflow
 
@@ -82,6 +86,27 @@ live — not "review this," but the exact claims that need confirming and why.
 | 8 | [Cannot connect to Argos Vault via AVD](docs/cannot-connect-avd.md) | AVD / Access | 🟡 SME review required | 3-4/month |
 | 9 | [Bank statement import errors and export file setup](docs/bank-statement-import-export.md) | Cashbook | 🟡 SME review required | ~2/month |
 | 10 | [Argos Batch Processing — server paths, version checks, troubleshooting](docs/batch-processing-server-troubleshooting.md) | System Config | 🟡 SME review required | ~2/month |
+| 11 | [Azure Virtual Desktop — first login setup](docs/avd-first-login.md) | AVD / Access | 🟡 SME review required | 2-3/month |
+| 12 | [Moving files into and out of your AVD session](docs/avd-file-transfer.md) | AVD / Access | 🟡 SME review required | included in #11 |
+| 13 | [Argos Help Centre — login and access troubleshooting](docs/help-centre-login-troubleshooting.md) | AVD / Access, General | 🟡 SME review required | ~2/month |
+| 14 | [Vault fails to load on startup](docs/vault-fails-to-load-on-startup.md) | System Config, AVD / Access | 🟡 SME review required | ~2/month |
+| 15 | [Vault won't start — licence error after an IP address change](docs/update-licence-ip-address.md) | System Config | 🟡 SME review required — premise itself unconfirmed | 8-10/month |
+| 16 | [Vault can't connect to the database — updating the server IP or name](docs/update-server-connection-ip.md) | System Config | 🟡 SME review required | 8-10/month |
+| 17 | [PPSR reconciliation](docs/ppsr-reconciliation.md) | System Config | 🟡 SME review required — key button name disputed | ~2/month |
+| 18 | [Variable Loan instalments — dates, ledger posting, missed instalments](docs/variable-loan-instalment-ledger-posting.md) | Variable Loan | ⚪ Draft — scope itself questioned | ~2/month |
+| 19 | [Correcting an interest rate loaded with the wrong effective date](docs/interest-rate-loading-correction.md) | Variable Loan, Fixed Loan, Lease | 🟡 SME review required | 3-4/month |
+| 20 | [Setting up an Interest Only Variable Loan with direct debit](docs/interest-only-variable-loan-setup.md) | Variable Loan | ⚪ Draft | 3-4/month |
+| 21 | [Generating a termination quote ("settlement statement")](docs/settlement-statement-generation.md) | Variable Loan, Fixed Loan, Lease | 🟡 SME review required — button names unconfirmed | 3-4/month |
+| 22 | [Early termination rounding issues on floorplan assets](docs/floorplan-rounding-issues.md) | Bailment | 🟢 Ready to publish | ~2/month |
+| 23 | [Reversing a transaction in Argos](docs/transaction-reversal.md) | Variable Loan, Fixed Loan, Lease, Bailment, Cashbook | 🟡 SME review required — FL/VL termination reversal not yet covered | 2-3/month |
+| 24 | [Lease data extract for Salesforce](docs/lease-data-extract-salesforce.md) | Lease | ⚪ Draft — SME said the fuller version shouldn't be published as drafted | ~2/month |
+
+Four further pipeline articles — "New User Provisioning Checklist," "New User Provisioning —
+End-to-End Guide," "Early Termination Step-by-Step," and "Month-End Checklist" — were merged
+into articles 1, 6, and 7 above rather than published as standalone pages, since they covered
+the same ground as an existing article. Article 11's original source also covered file
+transfer, which was split out into article 12 after a reviewer felt it didn't belong in a
+login guide.
 
 ## What's deliberately not in this prototype
 

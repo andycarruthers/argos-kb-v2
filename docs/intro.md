@@ -9,7 +9,7 @@ slug: /
 This is a **prototype** rebuild of the Argos knowledge base — organised around what you're trying to *do*, not around a screen-by-screen list of what each button does.
 
 :::info Prototype
-This covers 10 topics so far — the original 7 most common support reasons, plus 3 more pulled from Argos's live article review pipeline (with real SME corrections folded in). More are being added as that review process completes. The rest of the existing knowledge base is still available through your usual support channel while this is being built out.
+This covers 24 topics — the original 7 highest-deflection support topics, plus the full 20-article set from Argos's live "Argos KB — Article Pipeline" review in Notion (a few of which were merged into existing articles rather than published separately, and one spun out into its own article where a reviewer felt it didn't belong with the rest). Every pipeline article carries the real corrections its reviewers gave it. The rest of the existing knowledge base is still available through your usual support channel while this is being built out.
 :::
 
 ## Where to start

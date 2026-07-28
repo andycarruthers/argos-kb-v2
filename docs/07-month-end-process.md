@@ -16,6 +16,7 @@ related_articles:
 needs_sme_confirmation:
   - "This is a direct reorganisation of the existing Month End Processing Checklist into daily-vs-monthly sections — content itself is unchanged from the current published checklist, so lower risk than the others in this batch. Confirm the mandatory/IFRS/GL-reconciliation markers (*, **, ***) below still match current practice."
   - "The Insurer and Dealer sections below assume those modules are in use — confirm whether to keep them generic (as here) or split into per-module variants, since not every client licenses every module."
+  - "A separate, more detailed 11-step draft of this process exists in Argos's Notion review pipeline (status: Ready to Publish), but Greg Beale reviewed it (Jun 4) and said 'This needs quite a bit of work as some of the items listed under each module are either wrong or incomplete' without specifying which — so its module-by-module report names and reset order have NOT been merged into this article as verified fact. Only two specific, narrow dependencies from that draft are added below (General Ledger rolling last, and the Bailment/Receivables gotchas), since they're checkable, low-risk additions — but even these should be confirmed, not assumed correct, given the blanket warning attached to their source."
 ---
 
 # Running month-end: a checklist that actually matches how the system works
@@ -64,6 +65,16 @@ Reports marked `*` should be printed for GL reconciliation. Reports marked `**` 
 ### Per lending module (Variable Loan, Unit Fund, Lease, etc., as licensed)
 - Print Account Status Report with Show Accrued Interest, Accrued Date = month-end — useful for GL reconciliation on each module.
 - **Run End of Month Reset**` *** ` per module to post its transactions to the GL.
+
+### A few sequence dependencies worth knowing
+
+:::note Not yet verified
+These three points come from a draft still under SME review (with an unresolved "some items are wrong or incomplete" warning attached to the wider document it came from) — treat them as likely but not confirmed.
+:::
+
+- **The General Ledger should be the last thing you roll**, after every other module's End of Month Reset has completed — rolling it earlier is a common cause of the GL-out-of-balance symptom below.
+- **Bailment:** run **Post Bailment Fees on Accounts** before the Bailment End of Month Reset — running the reset first is a common cause of that reset failing.
+- **Payables/Receivables:** the Receivables reset will not roll if there are unprinted invoices for the period — print all invoices first.
 
 ## The final step, every month
 

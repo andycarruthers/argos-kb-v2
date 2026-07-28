@@ -11,6 +11,9 @@ supersedes:
   - Security Roles
   - User Access Security
   - External User Details
+  - New User Provisioning Checklist
+  - New User Provisioning in Argos Vault – End-to-End Guide
+  - SQL Server Access for Argos Users
 related_articles:
   - 04-direct-debit-curtailment-setup.md
   - cannot-connect-avd
@@ -18,6 +21,9 @@ needs_sme_confirmation:
   - "IP whitelisting mechanism described below (Azure NSG rule tied to the hosting VM) is inferred from architecture notes and client conversations, not from an existing KB article — no such article currently exists. Please confirm the actual current process (who requests it, who action­s it, expected turnaround) before publishing."
   - "Whether a self-service IP whitelisting option is on any near-term roadmap — if yes, this article should say so and set expectations; if no, it should say clearly why (see 'Why this isn't self-service yet' box)."
   - "Confirm current Preset Privilege Level options (Administrator/Power/Standard/Limited) are still accurate for new dialogs using Security Roles instead."
+  - "Greg Beale reviewed the 'what to gather before starting' checklist (Jun 4) and flagged: 'I would query the reference to which modules they require access to. The default is all staff have access to all modules that are licenced. If we refine that for a staff member we will need to implement Security. Are we up for that? It is an onerous task...' — Part 3 below presents module-level restriction as an optional, deliberately heavier step for this reason, not a routine checklist item. Confirm this framing is right."
+  - "Greg also said (Jun 4) the on-premise technical steps (SQL Server Management Studio login creation, ODBC DSN setup) need 'checked by someone with more technical expertise' — he could not personally vouch for their accuracy. Treat Part 3 as unverified until a technical reviewer confirms it."
+  - "The AVD provisioning turnaround time (stated below as 1-2 business days) is flagged in the source draft as needing SME confirmation of the actual SLA — not yet confirmed by anyone."
 source_tickets_reviewed:
   - "15228 — 'New user', Sept 2025, routine setup request"
   - "15236 — 'Whitelist IP', Sept 2025, remote-worker access request, resolved same day"
@@ -84,6 +90,23 @@ These are usually quick to action once we have the IP address, but if your team 
 - The exact IP address (have the person check "what's my IP" from the location they're connecting from — not their home router's internal IP)
 - Whether this is permanent (new office) or temporary (short-term remote work)
 - The Staff Code this is for, if already created
+
+## Part 3 — Which path you follow depends on how you're hosted
+
+**If you're an AVD-hosted client** (see Part 2), raising the new user with Argos Support covers both the network/VM side and gives them an Entra ID account — email **support@argos.co.nz** with subject "New User Access Request – [Your Company Name]", including the person's name, work email, required modules, and start date. Allow **1-2 business days** (turnaround not yet confirmed by an SME). The user then follows [Cannot Connect to Argos Vault via AVD](cannot-connect-avd) for their first login if anything doesn't work.
+
+**If you're a local/on-premise install**, there's no Support ticket needed — this is done entirely by your own IT/DBA:
+
+1. **Add the user to SQL Server.** In SQL Server Management Studio: **Security | Logins** → right-click **Logins** → **New Login** → enter the login name → select SQL Server authentication and set a password (uncheck "Enforce Password Policy") → on the **Server Roles** page, set to `public` → on the **User Mapping** page, check the Argos ledger database and assign `db_owner` and `public` roles → OK.
+2. **Create an ODBC data source on their workstation.** 64-bit: run `C:\Windows\SysWOW64\odbcad32.exe` directly (the standard 64-bit ODBC admin tool won't show the right driver list). 32-bit: Control Panel → Administrative Tools → ODBC Data Sources. Either way: **System DSN** tab → **[Add]** → SQL Server → **[Finish]** → name the DSN (usually the ledger/database name) → select the server → complete authentication → set the default database to the Argos ledger database → **[Test Data Source]** to confirm it connects → OK.
+3. **Create their desktop shortcut.** New → Shortcut → browse to `AFSFin.exe` in the `ArgosApps\AFS` folder (use a UNC path if it's on a network server) → name it → Finish → right-click → Properties → in the **Target** field, after the filename add: NT Authentication — `DSN=<ledger name>`; SQL Authentication — `DSN=<ledger name>;uid=<sqluserid>;pwd=<sqlpassword>` (no spaces) → Apply/OK.
+4. **Create the Staff Code in Vault** (Part 1, above).
+
+Test the login yourself before handing it over, and confirm the person can see what they're supposed to.
+
+### Restricting a user to specific modules
+
+By default, every staff member has access to every module your organisation is licensed for — there's no per-user module restriction out of the box. If you need someone limited to specific modules (rather than just specific dialogs, covered under "What actually restricts what a user can see" above), that requires **implementing Security** for your organisation — a genuinely bigger undertaking than a checklist item, since it means deciding and documenting exactly what every role in your organisation should and shouldn't see. Don't commit to this for a single new starter without planning it properly first; talk to Argos Support about what's involved.
 
 ## Common things that go wrong
 
